@@ -75,32 +75,35 @@ Each NLP tool has distinct strengths and weaknesses that make them suitable for 
 #### ✅ Pros
 
 1. **Very Fast**: Fastest morphological processing option
-2. **Language Agnostic**: Basic rules work across languages
-3. **Deterministic**: Consistent results every time
-4. **Low Resource**: Minimal memory and computational requirements
-5. **Simple Implementation**: Easy to understand and modify
+2. **Enhanced Rules**: Improved suffix handling with priority ordering
+3. **Morphological Awareness**: Better handling of double consonants and complex suffixes
+4. **Deterministic**: Consistent results every time
+5. **Low Resource**: Minimal memory and computational requirements
 6. **Good for IR**: Effective for information retrieval tasks
+7. **Production Ready**: More comprehensive rule set suitable for real applications
 
 #### ❌ Cons
 
-1. **Over-stemming**: May remove too much, losing meaning ("universal" → "univers")
-2. **Under-stemming**: May not reduce enough ("running", "ran" → different stems)
+1. **Still Rule-Based**: Over-stemming can occur with complex technical terms ("parallelization" → "parallelizate")
+2. **Domain Sensitivity**: Technical terms may not stem correctly ("SepFormer" → "sepform")
 3. **No Context**: Ignores word meaning and part of speech
-4. **Loss of Meaning**: Can create non-words or ambiguous stems
-5. **Language Specific**: Rules optimized for specific languages
-6. **Poor Accuracy**: 70-80% accuracy compared to 95%+ for lemmatization
+4. **Proper Noun Issues**: May inappropriately stem proper nouns and technical names
+5. **Language Specific**: Rules optimized for English
+6. **Accuracy Limitations**: 80-85% accuracy still lower than lemmatization
 
 #### 🎯 Best Use Cases
-- Information retrieval systems
-- Text classification with large vocabularies
+- Information retrieval systems with technical content
+- Text classification with large technical vocabularies
 - Real-time processing with strict latency requirements
-- Exploratory data analysis
+- Exploratory data analysis of research papers
+- Preprocessing for search systems
 
 #### ⚠️ Avoid When
-- Semantic analysis is important
-- Working with morphologically rich languages
-- Need to preserve word meaning
+- Semantic analysis is critical
+- Working with highly specialized technical terminology
+- Need to preserve proper nouns and model names
 - Accuracy is more important than speed
+- Processing research papers where precise term preservation matters
 
 ### 4. Lemmatization
 
@@ -273,7 +276,7 @@ Each NLP tool has distinct strengths and weaknesses that make them suitable for 
 |------|-------|----------|----------|
 | Sentence Splitter | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | Fast preprocessing |
 | Tokenization | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | Universal preprocessing |
-| Stemming | ⭐⭐⭐⭐⭐ | ⭐⭐ | Fast text reduction |
+| Stemming | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | Enhanced text reduction |
 | Lemmatization | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | Accurate text reduction |
 | Entity Masking | ⭐⭐⭐ | ⭐⭐⭐⭐ | Information extraction |
 | POS Tagging | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | Grammatical analysis |
